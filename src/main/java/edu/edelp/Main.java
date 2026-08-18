@@ -22,15 +22,15 @@ public class Main {
 
         //Mandar llamar el arraystack
         // CLASE ARRAYSATCK
-        IO.println("\n<< ARRAYSTACK >>");
+        System.out.println("\n<< ARRAYSTACK >>");
         ArrayStack arrayStack = new ArrayStack(10);
 
         arrayStack.push(10);
-        IO.println(arrayStack.toString());
+        System.out.println(arrayStack.toString());
         arrayStack.push(20);
-        IO.println(arrayStack.toString());
+        System.out.println(arrayStack.toString());
         arrayStack.push(30);
-        IO.println(arrayStack.toString());
+        System.out.println(arrayStack.toString());
 
 
     }
