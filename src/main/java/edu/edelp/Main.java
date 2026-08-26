@@ -1,11 +1,7 @@
 package edu.edelp;
 
-import edu.edelp.ejercicios.polindromo;
-import edu.edelp.ejercicios.parentesis;
 import edu.edelp.exception.udelpException;
 import edu.edelp.stack.Stack;
-
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
