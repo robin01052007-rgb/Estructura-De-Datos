@@ -4,7 +4,7 @@ import edu.edelp.stack.ArrayStack;
 
 import java.util.Locale;
 
-public class palindromo {
+public class polindromo {
 
     public boolean evalua(String palabra){
         String revez = "";

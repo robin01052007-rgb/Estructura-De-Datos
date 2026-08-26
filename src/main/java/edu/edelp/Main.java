@@ -1,9 +1,9 @@
 package edu.edelp;
 
-import edu.edelp.ejercicios.palindromo;
+import edu.edelp.ejercicios.polindromo;
 import edu.edelp.ejercicios.parentesis;
-import edu.edelp.nodo.Nodo;
-import edu.edelp.stack.ArrayStack;
+import edu.edelp.exception.udelpException;
+import edu.edelp.stack.Stack;
 
 import java.util.Scanner;
 
@@ -35,7 +35,7 @@ public class Main {
         arrayStack.push(20);
         System.out.println(arrayStack.toString());
         arrayStack.push(30);
-        System.out.println(arrayStack.toString()); */
+        System.out.println(arrayStack.toString());
 
         //Ejercicio de Parentesis
         String ecuacion = "((5*3)-5)";
@@ -62,9 +62,41 @@ public class Main {
         System.out.println("Introdusca una frase");
         cadena = sc.nextLine();
 
-        palindromo pal = new palindromo();
+        polindromo pal = new polindromo(); */
+
+        Stack stack = new Stack();
+        imprime(stack);
+
+        stack.push(5);
+        imprime(stack);
+
+        stack.push(6);
+        imprime(stack);
+
+        stack.push(7);
+        imprime(stack);
+
+        stack.push(8);
+        imprime(stack);
+
+        stack.pop();
+        imprime(stack);
+
+        stack.pop();
+        imprime(stack);
 
 
+    }
 
+    public static void imprime(Stack stack){
+        System.out.println("Stack contenido:");
+        System.out.println(stack);
+        try{
+            System.out.println("peek: " + stack.peek());
+        } catch (udelpException e) {
+            System.out.println("peek: " + e.getMessage());
+        }
+
+        System.out.println("Size: " + stack.size());
     }
 }
