@@ -1,7 +1,9 @@
 package edu.edelp;
 
-import edu.edelp.exception.udelpException;
-import edu.edelp.stack.Stack;
+import edu.edelp.model.Pagina;
+import edu.edelp.stack.PaginaStack;
+
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args){
@@ -58,7 +60,7 @@ public class Main {
         System.out.println("Introdusca una frase");
         cadena = sc.nextLine();
 
-        polindromo pal = new polindromo(); */
+        polindromo pal = new polindromo();
 
         Stack stack = new Stack();
         imprime(stack);
@@ -93,6 +95,59 @@ public class Main {
             System.out.println("peek: " + e.getMessage());
         }
 
-        System.out.println("Size: " + stack.size());
+        System.out.println("Size: " + stack.size()); */
+
+        PaginaStack stack = new PaginaStack();
+        PaginaStack stack2 = new PaginaStack();
+
+        String [] opciones = {"Nueva pagina", "Atras", "Actual", "Adelante", "Salir" };
+        boolean salir = false;
+
+        while (!salir) {
+            int option = JOptionPane.showOptionDialog(null, "Confirma una opcion", "URL",
+                    JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, null);
+
+            switch (option) {
+                case 0:
+
+                    Pagina nueva = new Pagina();
+                    String dato = JOptionPane.showInputDialog(null, "Dame el nombre de la pagina");
+                    stack.push(nueva);
+
+                    break;
+                case 1:
+
+                    if(!stack.isEmpty()){
+                        //stack2.push(stack.pop());
+                        Pagina p = stack.pop();
+                        stack2.push(p);
+
+                    }
+
+                    break;
+                case 2:
+
+                    if(!stack.isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Pagina actual: " + stack.peek());
+                    }
+
+                    break;
+                case 3:
+
+                    if(!stack2.isEmpty()){
+
+                        //stack.push(stack.pop());
+                        Pagina p = stack.pop();
+                        stack2.push(p);
+
+                    }
+
+                    break;
+                case 4:
+                    salir = true;
+                    break;
+            }
+        }
+
     }
 }
