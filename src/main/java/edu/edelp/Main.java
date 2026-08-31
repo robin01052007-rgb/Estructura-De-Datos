@@ -112,6 +112,7 @@ public class Main {
 
                     Pagina nueva = new Pagina();
                     String dato = JOptionPane.showInputDialog(null, "Dame el nombre de la pagina");
+                    nueva.setUrl(dato);
                     stack.push(nueva);
 
                     break;
@@ -137,13 +138,16 @@ public class Main {
                     if(!stack2.isEmpty()){
 
                         //stack.push(stack.pop());
-                        Pagina p = stack.pop();
-                        stack2.push(p);
+                        Pagina p = stack2.pop();
+                        stack.push(p);
 
                     }
 
                     break;
                 case 4:
+                    salir = true;
+                    break;
+                default:
                     salir = true;
                     break;
             }
