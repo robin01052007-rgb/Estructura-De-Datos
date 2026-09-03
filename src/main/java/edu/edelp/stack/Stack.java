@@ -5,7 +5,7 @@ import edu.edelp.nodo.Nodo;
 
 public class Stack {
 
-    private Nodo top;
+    private Nodo<Integer> top; // Especificamos <Integer>
     private int size;
 
     public Stack(){
@@ -30,7 +30,7 @@ public class Stack {
 
     public void push(int dato){
 
-        Nodo nuevo = new Nodo(dato);
+        Nodo<Integer> nuevo = new Nodo<>(dato); // Especificamos <Integer>
         if (top != null) {
             nuevo.setEnlace(top);
         }
@@ -57,7 +57,7 @@ public class Stack {
     public String toString(){
 
         StringBuilder s = new StringBuilder();
-        Nodo aux = top;
+        Nodo<Integer> aux = top; // Especificamos <Integer>
         while(aux != null) {
             s.append(aux.getDato()).append(" > ");
             aux = aux.getEnlace();
@@ -65,5 +65,4 @@ public class Stack {
 
         return s.toString();
     }
-
 }

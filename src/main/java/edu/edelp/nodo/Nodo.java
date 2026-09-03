@@ -3,26 +3,32 @@ package edu.edelp.nodo;
 public class Nodo<T> {
 
     private T dato;
-    private Nodo enlace;
+    private Nodo<T> enlace;
 
     public Nodo(T dato) {
         this.dato = dato;
         this.enlace = null;
     }
 
-    public int getDato() {
-        return (int) dato;
+    // Retorna T (el objeto o dato real), NO int
+    public T getDato() {
+        return dato;
     }
 
-    public Nodo getEnlace() {
+    public void setDato(T dato) {
+        this.dato = dato;
+    }
+
+    public Nodo<T> getEnlace() {
         return enlace;
     }
 
-    public void setEnlace(Nodo enlace) {
+    public void setEnlace(Nodo<T> enlace) {
         this.enlace = enlace;
     }
 
+    @Override
     public String toString() {
-        return dato + " - " +  enlace.toString();
+        return dato != null ? dato.toString() : "";
     }
 }

@@ -1,4 +1,4 @@
-package edu.edelp.tarea1;
+package edu.edelp.tarea.Tarea1;
 
 import java.util.Scanner;
 

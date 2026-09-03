@@ -3,74 +3,66 @@ package edu.edelp.queue;
 import edu.edelp.nodo.Nodo;
 import edu.edelp.exception.udelpException;
 
-public class Queue <T>{
+public class Queue<T> {
 
     private Nodo<T> front;
-
     private Nodo<T> rear;
-
     private int size;
 
-    public Queue(){
+    public Queue() {
         this.front = null;
         this.rear = null;
         this.size = 0;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return front == null;
-
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 
-    public void enqueue(int valor){
-
-        Nodo nuevo = new Nodo(valor);
-        if (isEmpty()){
+    // CORREGIDO: Ahora recibe 'T valor' en vez de 'int valor'
+    public void enqueue(T valor) {
+        Nodo<T> nuevo = new Nodo<>(valor);
+        if (isEmpty()) {
             front = nuevo;
             rear = nuevo;
         } else {
             rear.setEnlace(nuevo);
             rear = nuevo;
         }
-
         size++;
     }
 
-    public T dequeue(){
-        if (isEmpty()){
+    public T dequeue() {
+        if (isEmpty()) {
             throw new udelpException("Cola vacia");
         }
 
         T valor = front.getDato();
         front = front.getEnlace();
-        size++;
+        size--; // CORREGIDO: Resta el tamaño al sacar un elemento
 
         return valor;
     }
 
-    public T peek(){
-        if(isEmpty()){
+    public T peek() {
+        if (isEmpty()) {
             throw new udelpException("Cola Vacia");
-
         }
-
         return front.getDato();
     }
 
     @Override
-    public String toString(){
-
+    public String toString() {
         StringBuilder s = new StringBuilder();
         Nodo<T> aux = front;
-        while(aux != null) {
+        while (aux != null) {
             s.append(aux.getDato()).append(" < ");
             aux = aux.getEnlace();
         }
-
         return s.toString();
     }
 }
