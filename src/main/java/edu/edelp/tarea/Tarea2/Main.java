@@ -1,7 +1,6 @@
 package edu.edelp.tarea.Tarea2;
 
 import java.util.Scanner;
-import edu.edelp.exception.udelpException;
 
 public class Main {
 
