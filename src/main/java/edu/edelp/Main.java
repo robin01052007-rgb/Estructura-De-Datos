@@ -1,12 +1,16 @@
 package edu.edelp;
 
+import edu.edelp.exception.udelpException;
 import edu.edelp.model.Pagina;
+import edu.edelp.queue.Queue;
 import edu.edelp.stack.PaginaStack;
+import edu.edelp.queue.Queue;
 
 import javax.swing.*;
 
 public class Main {
     public static void main(String[] args){
+
         /*
         Nodo nodo = new Nodo(10);
         Nodo nodo2 = new Nodo(20);
@@ -95,7 +99,7 @@ public class Main {
             System.out.println("peek: " + e.getMessage());
         }
 
-        System.out.println("Size: " + stack.size()); */
+        System.out.println("Size: " + stack.size());
 
         PaginaStack stack = new PaginaStack();
         PaginaStack stack2 = new PaginaStack();
@@ -152,6 +156,38 @@ public class Main {
                     break;
             }
         }
+         */
 
+        Queue <Integer> q = new Queue();
+        imprimir(q);
+
+        q.enqueue(6);
+        imprimir(q);
+
+        q.enqueue(8);
+        imprimir(q);
+
+        q.enqueue(10);
+        imprimir(q);
+
+        q.enqueue(12);
+        imprimir(q);
+
+        int valor = q.dequeue();
+        System.out.println("Salida: " + valor);
+        imprimir(q);
+
+
+    }
+
+    public static void imprimir(Queue q) {
+        try {
+            System.out.println("--------------");
+            System.out.println(q.toString());
+            System.out.println(q.peek());
+            System.out.println();
+        } catch (udelpException e) {
+
+        }
     }
 }

@@ -1,17 +1,17 @@
 package edu.edelp.nodo;
 
-public class Nodo {
+public class Nodo<T> {
 
-    private int dato;
+    private T dato;
     private Nodo enlace;
 
-    public Nodo(int dato) {
+    public Nodo(T dato) {
         this.dato = dato;
         this.enlace = null;
     }
 
     public int getDato() {
-        return dato;
+        return (int) dato;
     }
 
     public Nodo getEnlace() {
