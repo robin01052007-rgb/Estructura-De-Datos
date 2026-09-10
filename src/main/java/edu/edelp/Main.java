@@ -1,15 +1,17 @@
 package edu.edelp;
 
 import edu.edelp.exception.udelpException;
+import edu.edelp.model.Alumno;
 import edu.edelp.model.Pagina;
 import edu.edelp.queue.Queue;
 import edu.edelp.stack.PaginaStack;
-import edu.edelp.queue.Queue;
+import edu.edelp.ejercicios.ServiciosEscolares;
 
 import javax.swing.*;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         /*
         Nodo nodo = new Nodo(10);
@@ -156,7 +158,7 @@ public class Main {
                     break;
             }
         }
-         */
+
 
         Queue <Integer> q = new Queue();
         imprimir(q);
@@ -179,8 +181,21 @@ public class Main {
 
 
     }
+    */
+        ColaCircular<Integer> Queue = new ColaCircular<>(5);
 
-    public static void imprimir(Queue q) {
+        queue.enqueue(1);
+        imprimir(queue);
+
+        queue.enqueue(2);
+        imprimir(queue);
+
+        queue.enqueue(3);
+        imprimir(queue);
+
+        int valor
+
+    public static void imprimir(ColaCircular queue) {
         try {
             System.out.println("--------------");
             System.out.println(q.toString());
@@ -189,5 +204,69 @@ public class Main {
         } catch (udelpException e) {
 
         }
+
+
+
+        Scanner sc = new Scanner(System.in);
+        boolean flag = true;
+
+        ServiciosEscolares servicios = new ServiciosEscolares();
+
+
+
+        do {
+            System.out.println("Seleccione una opcion: ");
+            System.out.println("1. Ingresar ALumno\n");
+            System.out.println("2. Atender Alumno\n");
+            System.out.println("3. Terminar atencion Alumno\n");
+            System.out.println("4. Mostrar Alumno Pendiente\n");
+            System.out.println("5. Mostrar ALumno en Caja\n");
+            System.out.println("6. Mostrar proximo Alumno");
+            System.out.println("7. Salir\n");
+
+            String opcion = sc.nextLine();
+            switch (opcion){
+                case "1":
+                    System.out.println("Ingrese el nombre del Alumno");
+                    String nombreAlumno = sc.nextLine();
+
+                    System.out.println("Ingrese el tramite del alumno");
+                    String tramite = sc.nextLine();
+
+
+                    Alumno alumno = new Alumno();
+
+                    servicios.formarAlumno(alumno);
+
+                    alumno.setNombre(nombreAlumno);
+                    alumno.setTramite(tramite);
+
+                    ServiciosEscolares.formarAlumno(alumno);
+
+                    break;
+                case "2":
+                    ServiciosEscolares.atenderAlumno();
+                    break;
+                case "3":
+                    ServiciosEscolares.terminarAtencionAlumno();
+                    break;
+                case "4":
+                    System.out.println(ServiciosEscolares.mostrarAlumnoPendientes());
+                    break;
+                case "5":
+                    System.out.println(ServiciosEscolares.mostrarCaja());
+                    break;
+                case "6":
+                    System.out.println(ServiciosEscolares.mostrarProximoAlumno());
+                    break;
+                case "7":
+                    flag = false;
+                    break;
+
+            }
+        } while (flag);
+
+
+
     }
 }
