@@ -181,7 +181,7 @@ public class Main {
 
 
     }
-    */
+
         ColaCircular<Integer> Queue = new ColaCircular<>(5);
 
         queue.enqueue(1);
@@ -266,7 +266,7 @@ public class Main {
             }
         } while (flag);
 
-
+        */
 
     }
 }

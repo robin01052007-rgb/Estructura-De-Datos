@@ -3,7 +3,7 @@ package edu.edelp;
 import edu.edelp.exception.udelpException;
 
 public class ColaCircular <T> {
-
+/*
     private T[] queue;
     private int size;
     private int front;
@@ -62,5 +62,5 @@ public class ColaCircular <T> {
         return sb.toString();
     }
 
-
+*/
 }
