@@ -31,4 +31,5 @@ public class Nodo<T> {
     public String toString() {
         return dato != null ? dato.toString() : "";
     }
+
 }

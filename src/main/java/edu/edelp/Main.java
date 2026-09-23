@@ -100,8 +100,9 @@ public class Main {
         } catch (udelpException e) {
             System.out.println("peek: " + e.getMessage());
         }
+        */
 
-        System.out.println("Size: " + stack.size());
+        //System.out.println("Size: " + stack.size());
 
         PaginaStack stack = new PaginaStack();
         PaginaStack stack2 = new PaginaStack();
@@ -158,6 +159,7 @@ public class Main {
                     break;
             }
         }
+        /*
 
 
         Queue <Integer> q = new Queue();
