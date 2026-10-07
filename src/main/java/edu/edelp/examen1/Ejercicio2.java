@@ -1,4 +1,4 @@
-package edu.edelp.examen;
+package edu.edelp.examen1;
 
 import java.util.Scanner;
 import edu.edelp.ejercicios.ServicioHospital;

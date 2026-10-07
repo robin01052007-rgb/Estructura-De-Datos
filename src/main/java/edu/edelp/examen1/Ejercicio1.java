@@ -1,4 +1,4 @@
-package edu.edelp.examen;
+package edu.edelp.examen1;
 
 import edu.edelp.stack.StackString;
 import java.util.Scanner;
